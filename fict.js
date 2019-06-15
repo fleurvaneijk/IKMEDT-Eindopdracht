@@ -31,6 +31,7 @@ window.onload = () => {
 }
 
 setPosition = (entity) => {
+
   var numX = Math.floor(Math.random()*10) + 1;
   numX *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
   var myX = numX;
