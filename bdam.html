@@ -21,12 +21,24 @@
         </a-entity>
       </a-camera>
 
+      <!-- Lines -->
+      <a-box color="#323232" height="4" width="0.25" depth="1" position= "-3.625 1.875 -6"></a-box>
+      <a-box color="#323232" height="0.25" width="7" depth="1" position= "0 0 -6"></a-box>
+
+      <!-- Planes -->
+      <a-plane onclick="placeObject(event)" color="red" width="0.75" height="0.75" position="-2 0.126 -6" rotation="-90 0 0"></a-plane>
+      <a-plane onclick="placeObject(event)" color="green" width="0.75" height="0.75" position="0 0.126 -6" rotation="-90 0 0"></a-plane>
+      <a-plane onclick="placeObject(event)" color="blue" width="0.75" height="0.75" position="2 0.126 -6" rotation="-90 0 0"></a-plane>
+
       <!-- Blocks -->
-      <!-- TODO: idle hover animation -->
-      <a-box id="js--bdam" onclick="enterChallenge(event)" color = "blue" position = "-3 2 -5">BDAM</a-box>
-      <a-box id="js--se" onclick="enterChallenge(event)" color = "blue" position = "-1 2 -5">SE</a-box>
-      <a-box id="js--iat" onclick="enterChallenge(event)" color = "blue" position = "1 2 -5">IAT</a-box>
-      <a-box id="js--fict" onclick="enterChallenge(event)" color = "blue" position = "3 2 -5">FICT</a-box>
+      <a-box id="js--bdam" onclick="pickUp(event)" color="red" position = "-8 -1 5"></a-box>
+
+      <a-box id="js--se" onclick="pickUp(event)" color = "green" position = "0 3 6"></a-box>
+      <a-box id="js--iat" onclick="pickUp(event)" color = "green" position = "7 -2 -5"></a-box>
+
+      <a-box id="js--fict" onclick="pickUp(event)" color = "blue" position = "-9 -8 7"></a-box>
+      <a-box id="js--fict" onclick="pickUp(event)" color = "blue" position = "-6 5 8"></a-box>
+      <a-box id="js--fict" onclick="pickUp(event)" color = "blue" position = "8 -1 6"></a-box>
 
 
     </a-scene>

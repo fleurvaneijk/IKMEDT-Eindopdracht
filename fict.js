@@ -44,5 +44,5 @@ setPosition = (entity) => {
   numZ *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
   var myZ = numZ;
 
-  entity .setAttribute('position', {x: myX, y: myY, z: myZ});
+  entity.setAttribute('position', {x: myX, y: myY, z: myZ});
 }
