@@ -1,30 +1,30 @@
-// var aframe = require('aframe');
-// var lookAt = require('aframe-look-at-component');
+// var aframe = require("aframe");
+// var lookAt = require("aframe-look-at-component");
 
 window.onload = () => {
-  var sceneEl = document.getElementById('js--scene');
+  var sceneEl = document.getElementById("js--scene");
 
-  var hacker = document.createElement('a-image');
-  hacker.setAttribute('src', 'images/hacker.png');
-  hacker.setAttribute('position', '-1 2 -5');
+  var hacker = document.createElement("a-image");
+  hacker.setAttribute("src", "images/hacker.png");
+  hacker.setAttribute("position", "-1 2 -5");
   // setPosition(hacker);
-  hacker.setAttribute('height', '1');
-  hacker.setAttribute('width', '1');
+  hacker.setAttribute("height", "1");
+  hacker.setAttribute("width", "1");
   sceneEl.appendChild(hacker);
 
   for(var i = 0 ; i < 100 ; i++) {
 
     var imageNr = Math.floor(Math.random() * 7) + 1;
-    var path = 'images/person_' + imageNr + '.png';
+    var path = "images/person_" + imageNr + ".png";
 
-    var entityEl = document.createElement('a-image');
-    entityEl.setAttribute('src', path);
+    var entityEl = document.createElement("a-image");
+    entityEl.setAttribute("src", path);
 
     setPosition(entityEl);
 
-    entityEl.setAttribute('look-at', '[camera]');
-    entityEl.setAttribute('height', '1');
-    entityEl.setAttribute('width', '1');
+    entityEl.setAttribute("look-at", "[camera]");
+    entityEl.setAttribute("height", "1");
+    entityEl.setAttribute("width", "1");
 
     sceneEl.appendChild(entityEl);
   }
@@ -44,5 +44,5 @@ setPosition = (entity) => {
   numZ *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
   var myZ = numZ;
 
-  entity.setAttribute('position', {x: myX, y: myY, z: myZ});
+  entity.setAttribute("position", {x: myX, y: myY, z: myZ});
 }
