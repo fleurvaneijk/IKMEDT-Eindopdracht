@@ -8,6 +8,9 @@ var counter2 = 0;
 var counter3 = 0;
 
 pickUp = function(event) {
+  if (document.getElementById("js--camera-box") != undefined) {
+    return;
+  }
   var color = event.target.getAttribute("color");
   document.getElementById(event.target.getAttribute("id")).remove();
   camera.appendChild(makeBox("js--camera-box", color,"-0.2 0 -0.4", "0.075"));
