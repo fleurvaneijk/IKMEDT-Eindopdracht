@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+    <script src="assets/js/aframe-master.js"></script>
     <meta charset="utf-8">
     <title>SE challenge</title>
   </head>
@@ -21,12 +22,14 @@
         </a-entity>
       </a-camera>
 
+      <a-sky src="assets\sky.jpg" rotation="0 -260 0"></a-sky>
+
       <!-- Blocks -->
       <!-- TODO: idle hover animation -->
-      <a-box id="js--bdam" onclick="enterChallenge(event)" color = "orange" position = "-3 2 -5"> </a-box>
+      <!-- <a-box id="js--bdam" onclick="enterChallenge(event)" color = "orange" position = "-3 2 -5"> </a-box>
       <a-box id="js--se" onclick="enterChallenge(event)" color = "orange" position = "-1 2 -5"> </a-box>
       <a-box id="js--iat" onclick="enterChallenge(event)" color = "orange" position = "1 2 -5"> </a-box>
-      <a-box id="js--fict" onclick="enterChallenge(event)" color = "orange" position = "3 2 -5"> </a-box>
+      <a-box id="js--fict" onclick="enterChallenge(event)" color = "orange" position = "3 2 -5"> </a-box> -->
 
 
     </a-scene>
