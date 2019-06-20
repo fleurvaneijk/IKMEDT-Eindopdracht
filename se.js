@@ -78,9 +78,9 @@ scoreBoard = function() {
   this.answer4.setAttribute("text", "value:");
 
   if(this.score >= 3){
-    this.question.setAttribute("text", "value: Je bent geslaagd! Je had: " + score + " van de 5 vragen goed.");
+    this.question.setAttribute("text", "value: Je bent geslaagd! Je had " + score + " van de 5 vragen goed.");
   } else {
-    this.question.setAttribute("text", "value: Je bent gezakt Je had: " + score + " van de 5 vragen goed. Probeer het nog een keer.");
+    this.question.setAttribute("text", "value: Je bent gezakt Je had " + score + " van de 5 vragen goed. Probeer het nog een keer.");
   }
   setTimeout(function(){
     leaveChallenge();
