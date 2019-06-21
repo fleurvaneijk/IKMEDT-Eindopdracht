@@ -1,5 +1,6 @@
 const camera = document.getElementById("js--camera");
 const scene = document.getElementById("js--scene");
+const carParts = document.getElementById("js--car-parts")
 
 var wheelCounter = 0;
 var boltCounter = 0;
@@ -31,10 +32,10 @@ makeEntity = function(id, model, position, scale) {
   entity.setAttribute("scale", scale);
 
   return entity;
-}
+};
 
 placeObject = function(event) {
-  buildCar();
+  // buildCar();
   const cameraObject = camera.getChildren()[1];
   const id = cameraObject.getAttribute("id");
   var position;
@@ -50,7 +51,7 @@ placeObject = function(event) {
     } else if(wheelCounter == 3) {
       position = "0 4 -8"
     }
-    scene.appendChild(makeEntity("wheel" + wheelCounter, cameraObject.getAttribute("obj-model"), position, scale));
+    carParts.appendChild(makeEntity("wheel" + wheelCounter, cameraObject.getAttribute("obj-model"), position, scale));
     wheelCounter++;
   }
   else if(id == "js--bolt") {
@@ -62,7 +63,7 @@ placeObject = function(event) {
     } else if(boltCounter == 2) {
       position = "-1 3 -8"
     }
-    scene.appendChild(makeEntity("bolt" + boltCounter, cameraObject.getAttribute("obj-model"), position, scale));
+    carParts.appendChild(makeEntity("bolt" + boltCounter, cameraObject.getAttribute("obj-model"), position, scale));
     boltCounter++;
   } else {
     return;
@@ -76,5 +77,34 @@ placeObject = function(event) {
 };
 
 buildCar = function() {
-  
-}
+  // TODO: automonteur geluidjes
+  scene.removeChild(carParts);
+  placeCar();
+};
+
+placeCar = function() {
+  let entity = document.createElement("a-entity");
+
+  entity.setAttribute("id", "js--car");
+  entity.setAttribute("obj-model", "obj: url(objects/car.obj); mtl: url(objects/car.mtl)");
+  entity.setAttribute("position", "0 0 -7");
+  entity.setAttribute("rotation", "0 -25 0");
+  setTimeout(function(){
+    entity.setAttribute("animation", "property: rotation; from: 0 -25 0; to: 0 180 0; dur: 2000; easing: linear;");
+  }, 500);
+  setTimeout(function(){
+    entity.setAttribute("animation", "property: position; from: 0 0 -7; to: 0 0 -1000; dur: 10000; easing: easeInCubic;");
+  }, 2500);
+  scene.appendChild(entity);
+
+  setTimeout(function(){
+    leaveChallenge();
+  }, 8000);
+};
+
+leaveChallenge = function() {
+  // TODO: fade screen to black dur:2000
+  setTimeout(function(){
+    location.replace("index.html");
+  }, 2000);
+};
