@@ -17,6 +17,7 @@
           material="color: black; shader: flat;"
           position="0 0 -3;"
           geometry="primitive: ring; radiusInner: 0.025; radiusOuter: 0.05;"
+          raycaster="objects: .clickable"
         >
         </a-entity>
       </a-camera>
@@ -26,19 +27,19 @@
       <a-box color="#323232" height="0.25" width="7" depth="1" position= "0 0 -6"></a-box>
 
       <!-- Planes -->
-      <a-plane onclick="placeObject(event)" color="red" width="0.75" height="0.75" position="-2 0.126 -6" rotation="-90 0 0"></a-plane>
-      <a-plane onclick="placeObject(event)" color="green" width="0.75" height="0.75" position="0 0.126 -6" rotation="-90 0 0"></a-plane>
-      <a-plane onclick="placeObject(event)" color="blue" width="0.75" height="0.75" position="2 0.126 -6" rotation="-90 0 0"></a-plane>
+      <a-plane onclick="placeObject(event)" color="red" width="0.75" height="0.75" position="-2 0.126 -6" rotation="-90 0 0" class="clickable"></a-plane>
+      <a-plane onclick="placeObject(event)" color="green" width="0.75" height="0.75" position="0 0.126 -6" rotation="-90 0 0" class="clickable"></a-plane>
+      <a-plane onclick="placeObject(event)" color="blue" width="0.75" height="0.75" position="2 0.126 -6" rotation="-90 0 0" class="clickable"></a-plane>
 
       <!-- Blocks -->
-      <a-box id="js--box1" onclick="pickUp(event)" color="red" position = "-8 -1 5"></a-box>
+      <a-box id="js--box1" onclick="pickUp(event)" color="red" position = "-8 -1 5" class="clickable"></a-box>
 
-      <a-box id="js--box2" onclick="pickUp(event)" color = "green" position = "0 3 6"></a-box>
-      <a-box id="js--box3" onclick="pickUp(event)" color = "green" position = "7 -2 -5"></a-box>
+      <a-box id="js--box2" onclick="pickUp(event)" color = "green" position = "0 3 6" class="clickable"></a-box>
+      <a-box id="js--box3" onclick="pickUp(event)" color = "green" position = "7 -2 -5" class="clickable"></a-box>
 
-      <a-box id="js--box4" onclick="pickUp(event)" color = "blue" position = "-9 -8 7"></a-box>
-      <a-box id="js--box5" onclick="pickUp(event)" color = "blue" position = "-6 5 8"></a-box>
-      <a-box id="js--box6" onclick="pickUp(event)" color = "blue" position = "8 -1 6"></a-box>
+      <a-box id="js--box4" onclick="pickUp(event)" color = "blue" position = "-9 -8 7" class="clickable"></a-box>
+      <a-box id="js--box5" onclick="pickUp(event)" color = "blue" position = "-6 5 8" class="clickable"></a-box>
+      <a-box id="js--box6" onclick="pickUp(event)" color = "blue" position = "8 -1 6" class="clickable"></a-box>
 
 
     </a-scene>

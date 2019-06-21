@@ -17,7 +17,6 @@ pickUp = function(event) {
 };
 
 placeObject = function(event) {
-  console.log("planePosition: " + planePosition);
 
   if(event.target.getAttribute("color") != document.getElementById("js--camera-box").getAttribute("color")) {
     return;
