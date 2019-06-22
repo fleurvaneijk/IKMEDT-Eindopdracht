@@ -60,6 +60,7 @@ makeBox = function(id, color, position, space) {
   box.setAttribute("width", space);
   box.setAttribute("height", space);
   box.setAttribute("depth", space);
+  box.setAttribute("class", "clickable");
   box.setAttribute("onclick", "placeObject(event)")
 
   return box;
