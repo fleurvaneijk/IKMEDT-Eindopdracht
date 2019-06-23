@@ -9,12 +9,23 @@
   <body>
     <a-scene id="js--scene" light="defaultLightsEnabled: false">
       <a-camera>
-        <a-cursor></a-cursor>
-  			<!-- <a-cursor geometry="primitive: ring; radiusInner: 0.2; radiusOuter: 2;" position="0 0 -1;">
-          <a-cursor></a-cursor>
-        </a-cursor> -->
-        <a-entity light="type: spot; angle: 15; distance: 100; decay: 1; penumbra: 0.2;"></a-entity>
+        <a-plane color="black" width="1" height="10" position="-0.55 0 -0.1"></a-plane>
+        <a-plane color="black" width="1" height="10" position="0.55 0 -0.1"></a-plane>
+        <a-plane color="black" width="10" height="1" position="0 0.55 -0.1"></a-plane>
+        <a-plane color="black" width="10" height="1" position="0 -0.55 -0.1"></a-plane>
+  			<a-cursor geometry="primitive: ring; radiusInner: 0.4; radiusOuter: 2;" position="0 0 -1;">
+          <a-entity
+            id="js--cursor"
+            material="color: white; shader: flat;"
+            position="0 0 -3;"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.04;"
+          >
+          </a-entity>
+        </a-cursor>
+        <a-entity light="type: spot; angle: 26; distance: 100; decay: 1; penumbra: 0.5;"></a-entity>
   		</a-camera>
+
+
 
     <a-plane color="grey" width="1000" height="1000" position="0 -50 0" rotation="-90 0 0"></a-plane>
     <a-plane color="grey" width="1000" height="1000" position="0 50 0" rotation="90 0 0"></a-plane>

@@ -40,9 +40,15 @@ setPosition = (entity) => {
   numY *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
   var myY = numY;
 
-  var numZ = Math.floor(Math.random()*10);
+  var numZ = Math.floor(Math.random()*9);
   numZ *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
   var myZ = numZ;
+
+  if (myZ <= 3 && myZ >= -3) {
+    entity.setAttribute("scale", "0.6 0.6 0.6");
+    // entity.setAttribute("look-at", "[camera]");
+    console.log("werkt dit?");
+  }
 
   entity.setAttribute("position", {x: myX, y: myY, z: myZ});
 };
