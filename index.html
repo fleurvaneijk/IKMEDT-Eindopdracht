@@ -6,17 +6,20 @@
     <title>Hub</title>
   </head>
   <body>
-    <a-scene id="js--scene">
+    <a-scene id="js--scene" antialias="true">
       <a-camera id="js--camera">
+
+        <!-- animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 100; from: 0.3 0.3 0.3; to: 1 1 1;"
+        animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1300; from: 1 1 1; to: 0.2 0.2 0.2;"
+        animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 400; to: 1 1 1"
+        cursor="fuse: true;" -->
+
         <a-entity
           id="js--cursor"
-          animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 100; from: 0.3 0.3 0.3; to: 1 1 1;"
-          animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1300; from: 1 1 1; to: 0.2 0.2 0.2;"
-          animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 400; to: 1 1 1"
           cursor="fuse: true;"
-          material="color: black; shader: flat;"
+          material="color: white; shader: flat;"
           position="0 0 -3;"
-          geometry="primitive: ring; radiusInner: 0.025; radiusOuter: 0.05;"
+          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.04;"
         >
         </a-entity>
       </a-camera>
@@ -25,18 +28,164 @@
         <audio id="elevator" src="audio/elevator.wav" preload="auto"></audio>
       </a-assets>
 
+      <a-sky color="#212121"></a-sky>
+
       <!-- <a-sound sound="src: #elevator; autoplay: true; loop: true; volume: 0.5;"></a-sound> -->
 
       <!-- Blocks -->
       <!-- TODO: idle hover animation -->
-      <a-box id="js--bdam" onclick="enterChallenge(event)" color="blue" position="-3 2 -5"> </a-box>
-      <a-text value="BDAM" position="-3.35 2 -4.5"></a-text>
-      <a-box id="js--se" onclick="enterChallenge(event)" color="orange" position="-1 2 -5"> </a-box>
-      <a-text value="SE" position="-1.2 2 -4.5"></a-text>
-      <a-box id="js--iat" onclick="enterChallenge(event)" color="purple" position="1 2 -5"> </a-box>
-      <a-text value="IAT" position="0.8 2 -4.5"></a-text>
-      <a-box id="js--fict" onclick="enterChallenge(event)" color="green" position="3 2 -5"> </a-box>
-      <a-text value="FICT" position="2.75 2 -4.5"></a-text>
+      <a-box id="js--bdam" onclick="enterChallenge(event)" color="#e91e63" position="-3 2 -5"
+        animation="
+          property: position;
+          from: -3 2 -5;
+          to: -3 2.05 -5;
+          dir: alternate;
+          dur: 2000;
+          loop: true;
+          easing: easeInOutSine;
+        "
+        animation__mouseenter="
+          property: rotation;
+          from: 0 0 0;
+          to: 0 360 0;
+          dur: 1800;
+          loop: true;
+          easing: easeInOutCubic;
+          startEvents: mouseenter;"
+        animation__mouseleave="
+          property: rotation;
+          to: 0 0 0;
+          dur: 1000;
+          easing: easeInOutElastic;
+          startEvents: mouseleave;"
+        animation__mouseenter2="
+          property: color;
+          to: #212121;
+          dur: 1800;
+          easing: easeInOutCubic;
+          startEvents: mouseenter;"
+        animation__mouseleave2="
+          property: color;
+          to: #e91e63;
+          dur: 1000;
+          easing: easeInOutElastic;
+          startEvents: mouseleave;">
+      </a-box>
+      <!-- <a-text value="BDAM" position="-3.35 2 -4.5"></a-text> -->
+      <a-box id="js--se" onclick="enterChallenge(event)" color="#2196f3" position="-1 2 -5"
+        animation="
+          property: position;
+          from: -1 2.05 -5;
+          to: -1 2 -5;
+          dir: alternate;
+          dur: 1900;
+          loop: true;
+          easing: easeInOutSine;
+        "
+        animation__mouseenter="
+          property: rotation;
+          from: 0 0 0;
+          to: 0 360 0;
+          dur: 1800;
+          loop: true;
+          easing: easeInOutCubic;
+          startEvents: mouseenter;"
+        animation__mouseleave="
+          property: rotation;
+          to: 0 0 0;
+          dur: 1000;
+          easing: easeInOutElastic;
+          startEvents: mouseleave;"
+        animation__mouseenter2="
+          property: color;
+          to: #212121;
+          dur: 1800;
+          easing: easeInOutCubic;
+          startEvents: mouseenter;"
+        animation__mouseleave2="
+          property: color;
+          to: #2196f3;
+          dur: 1000;
+          easing: easeInOutElastic;
+          startEvents: mouseleave;">
+      </a-box>
+      <!-- <a-text value="SE" position="-1.2 2 -4.5"></a-text> -->
+      <a-box id="js--iat" onclick="enterChallenge(event)" color="#ff5722" position="1 2 -5"
+        animation="
+          property: position;
+          from: 1 2 -5;
+          to: 1 2.05 -5;
+          dir: alternate;
+          dur: 2100;
+          loop: true;
+          easing: easeInOutSine;
+        "
+        animation__mouseenter="
+          property: rotation;
+          from: 0 0 0;
+          to: 0 -360 0;
+          dur: 1800;
+          loop: true;
+          easing: easeInOutCubic;
+          startEvents: mouseenter;"
+        animation__mouseleave="
+          property: rotation;
+          to: 0 0 0;
+          dur: 1000;
+          easing: easeInOutElastic;
+          startEvents: mouseleave;"
+        animation__mouseenter2="
+          property: color;
+          to: #212121;
+          dur: 1800;
+          easing: easeInOutCubic;
+          startEvents: mouseenter;"
+        animation__mouseleave2="
+          property: color;
+          to: #ff5722;
+          dur: 1000;
+          easing: easeInOutElastic;
+          startEvents: mouseleave;">
+      </a-box>
+      <!-- <a-text value="IAT" position="0.8 2 -4.5"></a-text> -->
+      <a-box id="js--fict" onclick="enterChallenge(event)" color="#4caf50" position="3 2 -5"
+        animation="
+          property: position;
+          from: 3 2.05 -5;
+          to: 3 2 -5;
+          dir: alternate;
+          dur: 1950;
+          loop: true;
+          easing: easeInOutSine;
+        "
+        animation__mouseenter="
+          property: rotation;
+          from: 0 0 0;
+          to: 0 -360 0;
+          dur: 1800;
+          loop: true;
+          easing: easeInOutCubic;
+          startEvents: mouseenter;"
+        animation__mouseleave="
+          property: rotation;
+          to: 0 0 0;
+          dur: 1000;
+          easing: easeInOutElastic;
+          startEvents: mouseleave;"
+        animation__mouseenter2="
+          property: color;
+          to: #212121;
+          dur: 1800;
+          easing: easeInOutCubic;
+          startEvents: mouseenter;"
+        animation__mouseleave2="
+          property: color;
+          to: #4caf50;
+          dur: 1000;
+          easing: easeInOutElastic;
+          startEvents: mouseleave;">
+      </a-box>
+      <!-- <a-text value="FICT" position="2.75 2 -4.5"></a-text> -->
 
 
     </a-scene>

@@ -7,6 +7,8 @@ window.onload = () => {
   hacker.setAttribute("look-at", "[camera]");
   hacker.setAttribute("height", "1");
   hacker.setAttribute("width", "1");
+  hacker.setAttribute("class", "clickable");
+  hacker.setAttribute("onclick", "leaveChallenge(event)");
   sceneEl.appendChild(hacker);
   // TODO: hacker clikckable onclick
 
@@ -25,8 +27,8 @@ window.onload = () => {
     entityEl.setAttribute("width", "1");
 
     sceneEl.appendChild(entityEl);
-  }
-}
+  };
+};
 
 setPosition = (entity) => {
 
@@ -43,4 +45,8 @@ setPosition = (entity) => {
   var myZ = numZ;
 
   entity.setAttribute("position", {x: myX, y: myY, z: myZ});
-}
+};
+
+leaveChallenge = function(event) {
+  location.replace("index.html");
+};
