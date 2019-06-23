@@ -30,6 +30,7 @@ makeEntity = function(id, model, position, scale, rotation="0 0 0") {
   entity.setAttribute("obj-model", model);
   entity.setAttribute("position", position);
   entity.setAttribute("scale", scale);
+  entity.setAttribute("rotation", rotation);
 
   return entity;
 };
@@ -43,7 +44,7 @@ placeObject = function(event) {
   if(id == "js--wheel") {
     scale = "0.0025 0.0025 0.0025";
     if(wheelCounter == 0) {
-      position = "0 1 -8"
+      position = "1 0.6 -7"
       rotation = "0 90 0"
     } else if(wheelCounter == 1) {
       position = "0 2 -8"

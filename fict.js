@@ -6,8 +6,9 @@ window.onload = () => {
 
   var hacker = document.createElement("a-image");
   hacker.setAttribute("src", "images/hacker.png");
-  hacker.setAttribute("position", "-1 2 -5");
-  // setPosition(hacker);
+  // hacker.setAttribute("position", "-1 2 -5");
+  setPosition(hacker);
+  hacker.setAttribute("look-at", "[camera]");
   hacker.setAttribute("height", "1");
   hacker.setAttribute("width", "1");
   sceneEl.appendChild(hacker);
