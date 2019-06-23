@@ -14,33 +14,89 @@
           animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1300; from: 1 1 1; to: 0.2 0.2 0.2;"
           animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 400; to: 1 1 1"
           cursor="fuse: true;"
-          material="color: black; shader: flat;"
+          material="color: white; shader: flat;"
           position="0 0 -3;"
-          geometry="primitive: ring; radiusInner: 0.025; radiusOuter: 0.05;"
+          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.04;"
           raycaster="objects: .clickable"
         >
+        <a-plane id="js--fadeout" color="black" width="100" height="100" opacity="0"></a-plane>
         </a-entity>
       </a-camera>
+
+      <a-sky color="#212121"></a-sky>
 
       <!-- Lines -->
       <a-box color="#323232" height="4" width="0.25" depth="1" position= "-3.625 1.875 -6"></a-box>
       <a-box color="#323232" height="0.25" width="7" depth="1" position= "0 0 -6"></a-box>
 
       <!-- Planes -->
-      <a-plane onclick="placeObject(event)" color="red" width="0.75" height="0.75" position="-2 0.126 -6" rotation="-90 0 0" class="clickable"></a-plane>
-      <a-plane onclick="placeObject(event)" color="green" width="0.75" height="0.75" position="0 0.126 -6" rotation="-90 0 0" class="clickable"></a-plane>
-      <a-plane onclick="placeObject(event)" color="blue" width="0.75" height="0.75" position="2 0.126 -6" rotation="-90 0 0" class="clickable"></a-plane>
+      <a-plane onclick="placeObject(event)" color="#e91e63" width="0.75" height="0.75" position="-2 0.126 -6" rotation="-90 0 0" class="clickable"></a-plane>
+      <a-plane onclick="placeObject(event)" color="#2196f3" width="0.75" height="0.75" position="0 0.126 -6" rotation="-90 0 0" class="clickable"></a-plane>
+      <a-plane onclick="placeObject(event)" color="#4caf50" width="0.75" height="0.75" position="2 0.126 -6" rotation="-90 0 0" class="clickable"></a-plane>
 
       <!-- Blocks -->
-      <a-box id="js--box1" onclick="pickUp(event)" color="red" position = "-8 -1 5" class="clickable"></a-box>
+      <a-box id="js--box1" onclick="pickUp(event)" color="#e91e63" position = "-8 -1 5" class="clickable"
+        animation="
+          property: position;
+          to: -8 0 5;
+          dir: alternate;
+          dur: 2100;
+          loop: true;
+          easing: easeInOutSine;
+        ">
+      </a-box>
 
-      <a-box id="js--box2" onclick="pickUp(event)" color = "green" position = "0 3 6" class="clickable"></a-box>
-      <a-box id="js--box3" onclick="pickUp(event)" color = "green" position = "7 -2 -5" class="clickable"></a-box>
+      <a-box id="js--box2" onclick="pickUp(event)" color = "#2196f3" position = "0 3 6" class="clickable"
+        animation="
+          property: position;
+          to: 0 4 6;
+          dir: alternate;
+          dur: 2100;
+          loop: true;
+          easing: easeInOutSine;
+        ">
+      </a-box>
+      <a-box id="js--box3" onclick="pickUp(event)" color = "#2196f3" position = "7 -2 -5" class="clickable"
+        animation="
+          property: position;
+          to: 7 -1 -5;
+          dir: alternate;
+          dur: 2100;
+          loop: true;
+          easing: easeInOutSine;
+        ">
+      </a-box>
 
-      <a-box id="js--box4" onclick="pickUp(event)" color = "blue" position = "-9 -8 7" class="clickable"></a-box>
-      <a-box id="js--box5" onclick="pickUp(event)" color = "blue" position = "-6 5 8" class="clickable"></a-box>
-      <a-box id="js--box6" onclick="pickUp(event)" color = "blue" position = "8 -1 6" class="clickable"></a-box>
-
+      <a-box id="js--box4" onclick="pickUp(event)" color = "#4caf50" position = "-9 -8 7" class="clickable"
+        animation="
+          property: position;
+          to: -9 -7 7;
+          dir: alternate;
+          dur: 2100;
+          loop: true;
+          easing: easeInOutSine;
+        ">
+      </a-box>
+      <a-box id="js--box5" onclick="pickUp(event)" color = "#4caf50" position = "-6 5 8" class="clickable"
+        animation="
+          property: position;
+          to: -6 6 8;
+          dir: alternate;
+          dur: 2100;
+          loop: true;
+          easing: easeInOutSine;
+        ">
+      </a-box>
+      <a-box id="js--box6" onclick="pickUp(event)" color = "#4caf50" position = "8 -1 6" class="clickable"
+        animation="
+          property: position;
+          to: 8 0 6;
+          dir: alternate;
+          dur: 2100;
+          loop: true;
+          easing: easeInOutSine;
+        ">
+      </a-box>
 
     </a-scene>
     <script src="bdam.js" type="text/javascript"></script>

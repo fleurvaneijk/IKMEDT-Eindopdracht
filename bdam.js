@@ -1,7 +1,8 @@
 const camera = document.getElementById("js--camera");
 const scene = document.getElementById("js--scene");
+const fadeoutPlane = document.getElementById("js--fadeout");
 
-const colors = ["red", "green", "blue"];
+const colors = ["#e91e63", "#2196f3", "#4caf50"];
 
 var counter1 = 0;
 var counter2 = 0;
@@ -48,7 +49,9 @@ placeObject = function(event) {
   }
   document.getElementById("js--camera-box").remove();
 
-  leaveChallenge()
+  if(counter1 == 1 && counter2 == 2 && counter3 == 3) {
+    leaveChallenge();
+  }
 };
 
 makeBox = function(id, color, position, space) {
@@ -66,8 +69,9 @@ makeBox = function(id, color, position, space) {
   return box;
 };
 
-leaveChallenge = function(event) {
-  if(counter1 == 1 && counter2 == 2 && counter3 == 3) {
+leaveChallenge = function() {
+  fadeoutPlane.setAttribute("animation", "property: opacity; to: 1; dur: 2000;");
+  setTimeout(function(){
     location.replace("index.html");
-  }
-};
+  }, 2000);
+}
