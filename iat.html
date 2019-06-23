@@ -22,11 +22,15 @@
         </a-entity>
       </a-camera>
 
+      <a-assets>
+        <audio id="engine" src="audio/engine.wav" preload="auto"></audio>
+      </a-assets>
+      <a-sound sound="src: #engine; autoplay: false; volume: 1.5;"></a-sound>
+
       <!-- Floor -->
       <a-plane color="grey" position="0 -1 0" width="10000" height="10000" rotation="-90 0 0"></a-plane>
 
       <a-entity id="js--car-parts">
-        <!-- Car parts -->
         <a-entity id="js--body" onclick="placeObject(event)" obj-model="obj: url(objects/body.obj); mtl: url(objects/body.mtl)" position="0 0 -8" rotation="0 25 0" scale="0.8 1.1 1" class="clickable"> </a-entity>
 
         <a-entity id="js--wheel1" onclick="pickUp(event)" obj-model="obj: url(objects/wheel.obj); mtl: url(objects/wheel.mtl)" position="-4 0 -3" scale="0.0025 0.0025 0.0025" rotation="0 90 90"  class="clickable"> </a-entity>
@@ -39,10 +43,8 @@
         <a-entity id="js--bolt3" onclick="pickUp(event)" obj-model="obj: url(objects/bolt.obj); mtl: url(objects/bolt.mtl)" position="-0.5 0 3.6" rotation="0 -75 -75" scale="0.15 0.15 0.15" class="clickable"> </a-entity>
       </a-entity>
 
-      <!-- <a-entity id="js--car" obj-model="obj: url(objects/car.obj); mtl: url(objects/car.mtl)" position="0 0 -8" rotation="0 25 0"> </a-entity> -->
-
-
     </a-scene>
     <script src="iat.js" type="text/javascript"></script>
+    <!-- <script src="main.js" type="text/javascript"></script> -->
   </body>
 </html>

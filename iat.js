@@ -23,7 +23,7 @@ pickUp = function(event) {
   camera.appendChild(makeEntity(id, objModel,"-0.2 0 -0.4" , scale));
 };
 
-makeEntity = function(id, model, position, scale) {
+makeEntity = function(id, model, position, scale, rotation="0 0 0") {
   let entity = document.createElement("a-entity");
 
   entity.setAttribute("id", id);
@@ -35,15 +35,16 @@ makeEntity = function(id, model, position, scale) {
 };
 
 placeObject = function(event) {
-  // buildCar();
   const cameraObject = camera.getChildren()[1];
   const id = cameraObject.getAttribute("id");
   var position;
+  var rotation;
 
   if(id == "js--wheel") {
     scale = "0.0025 0.0025 0.0025";
     if(wheelCounter == 0) {
       position = "0 1 -8"
+      rotation = "0 90 0"
     } else if(wheelCounter == 1) {
       position = "0 2 -8"
     } else if(wheelCounter == 2) {
@@ -51,7 +52,7 @@ placeObject = function(event) {
     } else if(wheelCounter == 3) {
       position = "0 4 -8"
     }
-    carParts.appendChild(makeEntity("wheel" + wheelCounter, cameraObject.getAttribute("obj-model"), position, scale));
+    carParts.appendChild(makeEntity("wheel" + wheelCounter, cameraObject.getAttribute("obj-model"), position, scale, rotation));
     wheelCounter++;
   }
   else if(id == "js--bolt") {
@@ -84,6 +85,7 @@ buildCar = function() {
 
 placeCar = function() {
   let entity = document.createElement("a-entity");
+  let sound = document.querySelector("[sound]");
 
   entity.setAttribute("id", "js--car");
   entity.setAttribute("obj-model", "obj: url(objects/car.obj); mtl: url(objects/car.mtl)");
@@ -93,18 +95,28 @@ placeCar = function() {
     entity.setAttribute("animation", "property: rotation; from: 0 -25 0; to: 0 180 0; dur: 2000; easing: linear;");
   }, 500);
   setTimeout(function(){
+    sound.components.sound.playSound();
     entity.setAttribute("animation", "property: position; from: 0 0 -7; to: 0 0 -1000; dur: 10000; easing: easeInCubic;");
   }, 2500);
   scene.appendChild(entity);
 
   setTimeout(function(){
+    // TODO: fade screen to black dur:2000
+    let spotlight = document.createElement("a-enitity");
+    spotlight.setAttribute("light", "type: spot");
+    // spotlight.setAttribute("animation", "property: ")
+  }, 2000);
+
+  setTimeout(function(){
     leaveChallenge();
-  }, 8000);
+  }, 6000);
 };
 
 leaveChallenge = function() {
-  // TODO: fade screen to black dur:2000
   setTimeout(function(){
     location.replace("index.html");
+    // completeChallenge("iat");
+
   }, 2000);
+
 };

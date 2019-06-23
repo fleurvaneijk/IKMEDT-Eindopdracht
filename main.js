@@ -1,5 +1,8 @@
-const camera = document.getElementById("js--camera");
-const scene = document.getElementById("js--scene");
+let challengesComplete = [["bdam", false], ["se", false], ["iat", false], ["fict", false]];
+
+window.onload = function() {
+  console.log(challengesComplete);
+}
 
 enterChallenge = function(event) {
   if (event.target.id == "js--bdam") {
@@ -10,5 +13,13 @@ enterChallenge = function(event) {
     location.replace("iat.html");
   } else if (event.target.id == "js--fict") {
     location.replace("fict.html");
+  }
+}
+
+completeChallenge = function(name) {
+  for(challenge of challengesComplete) {
+    if(challenge[0] == name) {
+      challenge[1] = true;
+    }
   }
 }
