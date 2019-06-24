@@ -13,8 +13,11 @@ pickUp = function(event) {
     return;
   }
   var color = event.target.getAttribute("color");
-  document.getElementById(event.target.getAttribute("id")).remove();
-  camera.appendChild(makeBox("js--camera-box", color,"-0.2 0 -0.4", "0.075"));
+  setTimeout(function(){
+    document.getElementById(event.target.getAttribute("id")).remove();
+    camera.appendChild(makeBox("js--camera-box", color,"-0.2 0 -0.4", "0.075"));
+    cameraBox = document.getElementById("js--camera-box").setAttribute("animation", "property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeOutElastic;")
+  }, 800);
 };
 
 placeObject = function(event) {
@@ -70,8 +73,8 @@ makeBox = function(id, color, position, space) {
 };
 
 leaveChallenge = function() {
-  fadeoutPlane.setAttribute("animation", "property: opacity; to: 1; dur: 2000;");
+  fadeoutPlane.setAttribute("animation", "property: opacity; to: 1; dur: 3000; easing: easeInElastic");
   setTimeout(function(){
     location.replace("index.html");
-  }, 2000);
+  }, 3000);
 }

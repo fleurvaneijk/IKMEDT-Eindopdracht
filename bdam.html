@@ -8,12 +8,14 @@
   <body>
     <a-scene id="js--scene">
       <a-camera id="js--camera">
+
+        <!-- animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 100; from: 0.3 0.3 0.3; to: 1 1 1;"
+        animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1300; from: 1 1 1; to: 0.2 0.2 0.2;"
+        animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 400; to: 1 1 1" -->
+
         <a-entity
           id="js--cursor"
-          animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 100; from: 0.3 0.3 0.3; to: 1 1 1;"
-          animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1300; from: 1 1 1; to: 0.2 0.2 0.2;"
-          animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 400; to: 1 1 1"
-          cursor="fuse: true;"
+          cursor="fuse: true; fuseTimeout: 500"
           material="color: white; shader: flat;"
           position="0 0 -3;"
           geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.04;"
@@ -28,8 +30,8 @@
       <a-text color="white" value="hoi" position="0 2 -6"></a-text>
 
       <!-- Lines -->
-      <a-box color="#323232" height="4" width="0.25" depth="1" position="-3.625 1.875 -6"></a-box>
-      <a-box color="#323232" height="0.25" width="7" depth="1" position="0 0 -6"></a-box>
+      <a-box color="#424242" height="4" width="0.25" depth="1" position="-3.625 1.875 -6"></a-box>
+      <a-box color="#424242" height="0.25" width="7" depth="1" position="0 0 -6"></a-box>
 
       <!-- Planes -->
       <a-plane onclick="placeObject(event)" color="#e91e63" width="0.75" height="0.75" position="-2 0.126 -6" rotation="-90 0 0" class="clickable"></a-plane>
@@ -45,6 +47,14 @@
           dur: 2100;
           loop: true;
           easing: easeInOutSine;
+        "
+        animation__mouseenter="
+          property: scale;
+          from: 1 1 1;
+          to: 0 0 0;
+          dur: 2000;
+          easing: easeInOutElastic;
+          startEvents: mouseenter;
         ">
       </a-box>
 
@@ -53,9 +63,17 @@
           property: position;
           to: 0 3.2 6;
           dir: alternate;
-          dur: 2100;
+          dur: 1900;
           loop: true;
           easing: easeInOutSine;
+        "
+        animation__mouseenter="
+          property: scale;
+          from: 1 1 1;
+          to: 0 0 0;
+          dur: 2000;
+          easing: easeInOutElastic;
+          startEvents: mouseenter;
         ">
       </a-box>
       <a-box id="js--box3" onclick="pickUp(event)" color = "#2196f3" position = "7 -2 -5" class="clickable"
@@ -63,9 +81,17 @@
           property: position;
           to: 7 -1.8 -5;
           dir: alternate;
-          dur: 2100;
+          dur: 2000;
           loop: true;
           easing: easeInOutSine;
+        "
+        animation__mouseenter="
+          property: scale;
+          from: 1 1 1;
+          to: 0 0 0;
+          dur: 2000;
+          easing: easeInOutElastic;
+          startEvents: mouseenter;
         ">
       </a-box>
 
@@ -74,9 +100,17 @@
           property: position;
           to: -9 -7.8 7;
           dir: alternate;
-          dur: 2100;
+          dur: 1950;
           loop: true;
           easing: easeInOutSine;
+        "
+        animation__mouseenter="
+          property: scale;
+          from: 1 1 1;
+          to: 0 0 0;
+          dur: 2000;
+          easing: easeInOutElastic;
+          startEvents: mouseenter;
         ">
       </a-box>
       <a-box id="js--box5" onclick="pickUp(event)" color = "#4caf50" position = "-6 5 8" class="clickable"
@@ -87,6 +121,14 @@
           dur: 2100;
           loop: true;
           easing: easeInOutSine;
+        "
+        animation__mouseenter="
+          property: scale;
+          from: 1 1 1;
+          to: 0 0 0;
+          dur: 2000;
+          easing: easeInOutElastic;
+          startEvents: mouseenter;
         ">
       </a-box>
       <a-box id="js--box6" onclick="pickUp(event)" color = "#4caf50" position = "8 -1 6" class="clickable"
@@ -94,11 +136,20 @@
           property: position;
           to: 8 -0.8 6;
           dir: alternate;
-          dur: 2100;
+          dur: 1900;
           loop: true;
           easing: easeInOutSine;
+        "
+        animation__mouseenter="
+          property: scale;
+          from: 1 1 1;
+          to: 0 0 0;
+          dur: 2000;
+          easing: easeInOutElastic;
+          startEvents: mouseenter;
         ">
       </a-box>
+
 
     </a-scene>
     <script src="bdam.js" type="text/javascript"></script>
