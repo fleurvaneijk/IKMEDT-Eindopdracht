@@ -142,8 +142,8 @@ setRacetrack = function() {
 }
 
 leaveChallenge = function() {
-  fadeoutPlane.setAttribute("animation", "property: opacity; to: 1; dur: 2000;");
-  setTimeout(function(){
+  // fadeoutPlane.setAttribute("animation", "property: opacity; to: 1; dur: 2000;");
+  // setTimeout(function(){
     location.replace("index.html");
-  }, 2000);
+  // }, 2000);
 }
