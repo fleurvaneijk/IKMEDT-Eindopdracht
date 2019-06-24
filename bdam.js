@@ -17,7 +17,7 @@ pickUp = function(event) {
     document.getElementById(event.target.getAttribute("id")).remove();
     camera.appendChild(makeBox("js--camera-box", color,"-0.2 0 -0.4", "0.075"));
     cameraBox = document.getElementById("js--camera-box").setAttribute("animation", "property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeOutElastic;")
-  }, 800);
+  }, 1300);
 };
 
 placeObject = function(event) {
