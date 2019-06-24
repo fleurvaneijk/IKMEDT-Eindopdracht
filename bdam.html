@@ -25,9 +25,11 @@
 
       <a-sky color="#212121"></a-sky>
 
+      <a-text color="white" value="hoi" position="0 2 -6"></a-text>
+
       <!-- Lines -->
-      <a-box color="#323232" height="4" width="0.25" depth="1" position= "-3.625 1.875 -6"></a-box>
-      <a-box color="#323232" height="0.25" width="7" depth="1" position= "0 0 -6"></a-box>
+      <a-box color="#323232" height="4" width="0.25" depth="1" position="-3.625 1.875 -6"></a-box>
+      <a-box color="#323232" height="0.25" width="7" depth="1" position="0 0 -6"></a-box>
 
       <!-- Planes -->
       <a-plane onclick="placeObject(event)" color="#e91e63" width="0.75" height="0.75" position="-2 0.126 -6" rotation="-90 0 0" class="clickable"></a-plane>
@@ -38,7 +40,7 @@
       <a-box id="js--box1" onclick="pickUp(event)" color="#e91e63" position = "-8 -1 5" class="clickable"
         animation="
           property: position;
-          to: -8 0 5;
+          to: -8 -0.8 5;
           dir: alternate;
           dur: 2100;
           loop: true;
@@ -49,7 +51,7 @@
       <a-box id="js--box2" onclick="pickUp(event)" color = "#2196f3" position = "0 3 6" class="clickable"
         animation="
           property: position;
-          to: 0 4 6;
+          to: 0 3.2 6;
           dir: alternate;
           dur: 2100;
           loop: true;
@@ -59,7 +61,7 @@
       <a-box id="js--box3" onclick="pickUp(event)" color = "#2196f3" position = "7 -2 -5" class="clickable"
         animation="
           property: position;
-          to: 7 -1 -5;
+          to: 7 -1.8 -5;
           dir: alternate;
           dur: 2100;
           loop: true;
@@ -70,7 +72,7 @@
       <a-box id="js--box4" onclick="pickUp(event)" color = "#4caf50" position = "-9 -8 7" class="clickable"
         animation="
           property: position;
-          to: -9 -7 7;
+          to: -9 -7.8 7;
           dir: alternate;
           dur: 2100;
           loop: true;
@@ -80,7 +82,7 @@
       <a-box id="js--box5" onclick="pickUp(event)" color = "#4caf50" position = "-6 5 8" class="clickable"
         animation="
           property: position;
-          to: -6 6 8;
+          to: -6 5.2 8;
           dir: alternate;
           dur: 2100;
           loop: true;
@@ -90,7 +92,7 @@
       <a-box id="js--box6" onclick="pickUp(event)" color = "#4caf50" position = "8 -1 6" class="clickable"
         animation="
           property: position;
-          to: 8 0 6;
+          to: 8 -0.8 6;
           dir: alternate;
           dur: 2100;
           loop: true;
