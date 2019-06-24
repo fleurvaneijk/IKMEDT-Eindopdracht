@@ -22,7 +22,7 @@ questions[1] = ["Welke van de onderstaanden lijkt het meest op een computer prog
   ["Blauwprint", true],
   ["Woordenboek", false]];
 questions[2] = ["Welke van de onderstaanden is geen programmeertaal",
-  ["Python", false],
+  ["PHP", false],
   ["Java", false],
   ["HTML", true],
   ["C++", false]];
@@ -45,14 +45,21 @@ answer4.setAttribute("text", "value:" + questions[currentQuestion][4][0]);
 
 selectAnswer = function(event) {
   const id = event.target.id.substr(event.target.id.length - 1);
+  let correct = false;
   for(var i = 1 ; i < 5 ; i++) {
     if(questions[currentQuestion][id][1] == true){
-      light.setAttribute("color", "green");
-      score = score + 1;
+      correct = true;
     } else {
-      light.setAttribute("color", "red");
+      correct = false;
     }
   }
+  if(correct == true) {
+    light.setAttribute("color", "green");
+    score = score + 1;
+  } else if(correct == false) {
+    light.setAttribute("color", "red");
+  }
+
   setTimeout(function(){
     if(currentQuestion == 4) {
       scoreBoard();
@@ -80,7 +87,7 @@ scoreBoard = function() {
   if(score >= 3){
     question.setAttribute("text", "value: Je bent geslaagd! Je had " + score + " van de 5 vragen goed.");
   } else {
-    question.setAttribute("text", "value: Je bent gezakt Je had " + score + " van de 5 vragen goed. Probeer het nog een keer.");
+    question.setAttribute("text", "value: Je bent gezakt. Je had " + score + " van de 5 vragen goed. Probeer het nog een keer.");
   }
   setTimeout(function(){
     leaveChallenge();
