@@ -44,14 +44,17 @@ placeObject = function(event) {
   if(id == "js--wheel") {
     scale = "0.0025 0.0025 0.0025";
     if(wheelCounter == 0) {
-      position = "1 0.6 -7"
-      rotation = "0 90 0"
+      position = "1 0.6 -9"
+      rotation = "0 70 0"
     } else if(wheelCounter == 1) {
-      position = "0 2 -8"
+      position = "1.5 -0.8 -6"
+      rotation = "0 120 0"
     } else if(wheelCounter == 2) {
-      position = "0 3 -8"
+      position = "0 0.6 -7"
+      rotation = "0 90 0"
     } else if(wheelCounter == 3) {
-      position = "0 4 -8"
+      position = "-2 0.6 -8"
+      rotation = "0 120 0"
     }
     carParts.appendChild(makeEntity("wheel" + wheelCounter, cameraObject.getAttribute("obj-model"), position, scale, rotation));
     wheelCounter++;
@@ -59,13 +62,16 @@ placeObject = function(event) {
   else if(id == "js--bolt") {
     scale = "0.15 0.15 0.15";
     if(boltCounter == 0) {
-      position = "-1 1 -8"
+      position = "-1 0.7 -6";
+      rotation = "0 40 75";
     } else if(boltCounter == 1) {
-      position = "-1 2 -8"
+      position = "3 0.7 -8";
+      rotation = "0 -75 -75";
     } else if(boltCounter == 2) {
-      position = "-1 3 -8"
+      position = "0 0.1 -5";
+      rotation = "0 0 -75";
     }
-    carParts.appendChild(makeEntity("bolt" + boltCounter, cameraObject.getAttribute("obj-model"), position, scale));
+    carParts.appendChild(makeEntity("bolt" + boltCounter, cameraObject.getAttribute("obj-model"), position, scale, rotation));
     boltCounter++;
   } else {
     return;
@@ -74,7 +80,9 @@ placeObject = function(event) {
   camera.removeChild(cameraObject);
 
   if(wheelCounter == 4 && boltCounter == 3) {
-    buildCar();
+    setTimeout(function(){
+      buildCar();
+    }, 1000);
   }
 };
 
