@@ -1,6 +1,7 @@
 const camera = document.getElementById("js--camera");
 const scene = document.getElementById("js--scene");
-const carParts = document.getElementById("js--car-parts")
+const carParts = document.getElementById("js--car-parts");
+const fadeoutPlane = document.getElementById("js--fadeout");
 
 var wheelCounter = 0;
 var boltCounter = 0;
@@ -141,8 +142,8 @@ setRacetrack = function() {
 }
 
 leaveChallenge = function() {
+  fadeoutPlane.setAttribute("animation", "property: opacity; to: 1; dur: 2000;");
   setTimeout(function(){
     location.replace("index.html");
   }, 2000);
-
-};
+}

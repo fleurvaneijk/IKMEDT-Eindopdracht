@@ -1,5 +1,6 @@
 var scene = document.getElementById("js--scene");
 var light = document.getElementById("js--light");
+const fadeoutPlane = document.getElementById("js--fadeout");
 
 var question = document.getElementById("js--text-question");
 var answer1 = document.getElementById("js--text-answer1");
@@ -95,5 +96,8 @@ scoreBoard = function() {
 };
 
 leaveChallenge = function() {
-  location.replace("index.html");
-};
+  fadeoutPlane.setAttribute("animation", "property: opacity; to: 1; dur: 2000;");
+  setTimeout(function(){
+    location.replace("index.html");
+  }, 2000);
+}

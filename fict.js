@@ -1,3 +1,5 @@
+const fadeoutPlane = document.getElementById("js--fadeout");
+
 window.onload = () => {
   var sceneEl = document.getElementById("js--scene");
 
@@ -53,6 +55,9 @@ setPosition = (entity) => {
   entity.setAttribute("position", {x: myX, y: myY, z: myZ});
 };
 
-leaveChallenge = function(event) {
-  location.replace("index.html");
-};
+leaveChallenge = function() {
+  // fadeoutPlane.setAttribute("animation", "property: opacity; to: 1; dur: 2000;");
+  // setTimeout(function(){
+    location.replace("index.html");
+  // }, 2000);
+}
