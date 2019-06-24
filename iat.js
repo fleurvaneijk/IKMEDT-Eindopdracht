@@ -79,12 +79,12 @@ placeObject = function(event) {
 };
 
 buildCar = function() {
-  // TODO: automonteur geluidjes
   scene.removeChild(carParts);
   placeCar();
 };
 
 placeCar = function() {
+  setRacetrack();
   let entity = document.createElement("a-entity");
   let sound = document.querySelector("[sound]");
 
@@ -113,11 +113,28 @@ placeCar = function() {
   }, 6000);
 };
 
+setRacetrack = function() {
+  let road = document.createElement("a-plane");
+  road.setAttribute("color", "black");
+  road.setAttribute("position", "0 -0.9 0");
+  road.setAttribute("width", "20");
+  road.setAttribute("height", "10000");
+  road.setAttribute("rotation", "-90 0 0");
+
+  let line = document.createElement("a-plane");
+  line.setAttribute("color", "yellow");
+  line.setAttribute("position", "0 -0.8 0");
+  line.setAttribute("width", "0.5");
+  line.setAttribute("height", "10000");
+  line.setAttribute("rotation", "-90 0 0");
+
+  scene.appendChild(road);
+  scene.appendChild(line);
+}
+
 leaveChallenge = function() {
   setTimeout(function(){
     location.replace("index.html");
-    // completeChallenge("iat");
-
   }, 2000);
 
 };
