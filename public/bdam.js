@@ -2,6 +2,15 @@ const camera = document.getElementById("js--camera");
 const scene = document.getElementById("js--scene");
 const fadeoutPlane = document.getElementById("js--fadeout");
 
+const box1 = document.getElementById("js--box1");
+const box2 = document.getElementById("js--box2");
+const box3 = document.getElementById("js--box3");
+const box4 = document.getElementById("js--box4");
+const box5 = document.getElementById("js--box5");
+const box6 = document.getElementById("js--box6");
+
+const boxes = [box1, box2, box3, box4, box5, box6];
+
 const colors = ["#e91e63", "#2196f3", "#4caf50"];
 
 var counter1 = 0;
@@ -17,10 +26,16 @@ pickUp = function(event) {
     document.getElementById(event.target.getAttribute("id")).remove();
     camera.appendChild(makeBox("js--camera-box", color,"-0.2 0 -0.4", "0.075"));
     cameraBox = document.getElementById("js--camera-box").setAttribute("animation", "property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeOutElastic;")
+    for (box of boxes) {
+      box.setAttribute("class", "not-clickable")
+    }
   }, 1300);
 };
 
 placeObject = function(event) {
+  for (box of boxes) {
+    box.setAttribute("class", "clickable")
+  }
 
   if(event.target.getAttribute("color") != document.getElementById("js--camera-box").getAttribute("color")) {
     return;
