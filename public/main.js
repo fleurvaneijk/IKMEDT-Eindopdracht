@@ -6,10 +6,10 @@ let challengeSound = document.getElementById("js--challenge-sound");
 window.onload = function() {
   setTimeout(function(){
     welcomeSound.components.sound.playSound();
-  }, 400);
+  }, 6000);
   setTimeout(function(){
     challengeSound.components.sound.playSound();
-  }, 2400);
+  }, 11000);
 };
 
 enterChallenge = function(event) {
