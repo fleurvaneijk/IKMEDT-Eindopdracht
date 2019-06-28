@@ -27,11 +27,16 @@
 
       <a-assets>
         <audio id="elevator" src="audio/elevator.wav" preload="auto"></audio>
+        <audio id="welcome" src="audio/welkom.flac" preload="auto"></audio>
+        <audio id="challenge" src="audio/challenge.flac" preload="auto"></audio>
       </a-assets>
 
       <a-sky color="#212121"></a-sky>
 
       <!-- <a-sound sound="src: #elevator; autoplay: true; loop: true; volume: 0.5;"></a-sound> -->
+      <a-sound id="js--welcome-sound" sound="src: #welcome; volume: 1;"></a-sound>
+      <a-sound id="js--challenge-sound" sound="src: #challenge;  volume: 1;"></a-sound>
+
 
       <a-text value="bdam" position="-3.2 3 -4.5" color="#fce4ec" font="kelsonsans"></a-text>
       <!-- <a-text value="se" position="-1.1 3 -4.5" color="#e3f2fd" font="kelsonsans"></a-text>
