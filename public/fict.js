@@ -3,12 +3,9 @@ let lightSwitch = document.getElementById("js--light-switch");
 let goodSound = document.getElementById("js--good-sound");
 const flashlight = document.getElementById("js--flashlight");
 const flashcursor = document.getElementById("js--flashcursor");
+const scene = document.getElementById("js--scene");
 
-
-
-window.onload = () => {
-  var sceneEl = document.getElementById("js--scene");
-
+scene.addEventListener("loaded", function() {
   var hacker = document.createElement("a-image");
   hacker.setAttribute("src", "images/hacker.png");
   setPosition(hacker);
@@ -17,8 +14,7 @@ window.onload = () => {
   hacker.setAttribute("width", "1");
   hacker.setAttribute("class", "clickable");
   hacker.setAttribute("onclick", "leaveChallenge(event)");
-  sceneEl.appendChild(hacker);
-  // TODO: hacker clikckable onclick
+  scene.appendChild(hacker);
 
   for(var i = 0 ; i < 100 ; i++) {
 
@@ -34,11 +30,11 @@ window.onload = () => {
     entityEl.setAttribute("height", "1");
     entityEl.setAttribute("width", "1");
 
-    sceneEl.appendChild(entityEl);
+    scene.appendChild(entityEl);
   };
-};
+});
 
-setPosition = (entity) => {
+setPosition = function(entity) {
 
   var numX = Math.floor(Math.random()*10) + 1;
   numX *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
