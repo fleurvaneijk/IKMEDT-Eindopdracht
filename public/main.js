@@ -2,15 +2,16 @@ const bdamButton = document.getElementById("js--bdam-button");
 const fictButton = document.getElementById("js--fict-button");
 let welcomeSound = document.getElementById("js--welcome-sound");
 let challengeSound = document.getElementById("js--challenge-sound");
+const scene = document.getElementById("js--scene");
 
-window.onload = function() {
+scene.addEventListener("loaded", function() {
   setTimeout(function(){
     welcomeSound.components.sound.playSound();
-  }, 6000);
+  }, 1000);
   setTimeout(function(){
     challengeSound.components.sound.playSound();
-  }, 11000);
-};
+  }, 2500);
+});
 
 enterChallenge = function(event) {
   if (event.target.id == "js--bdam") {

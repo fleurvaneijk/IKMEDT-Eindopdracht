@@ -24,11 +24,11 @@ var counter1 = 0;
 var counter2 = 0;
 var counter3 = 0;
 
-window.onload = function() {
+scene.addEventListener("loaded", function() {
   setTimeout(function(){
     snippet1.components.sound.playSound();
-  }, 7000);
-};
+  }, 1000);
+});
 
 pickUp = function(event) {
   if (document.getElementById("js--camera-box") != undefined) {

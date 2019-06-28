@@ -7,7 +7,15 @@ const scene = document.getElementById("js--scene");
 
 const snippet1 = document.getElementById("js--snippet1");
 const snippet2 = document.getElementById("js--snippet2");
+
 scene.addEventListener("loaded", function() {
+  setTimeout(function(){
+    snippet1.components.sound.playSound();
+  }, 1000);
+  setTimeout(function(){
+    snippet2.components.sound.playSound();
+  }, 7000);
+
   var hacker = document.createElement("a-image");
   hacker.setAttribute("src", "images/hacker.png");
   setPosition(hacker);
