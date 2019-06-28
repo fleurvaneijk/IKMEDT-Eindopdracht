@@ -1,4 +1,5 @@
 const fadeoutPlane = document.getElementById("js--fadeout");
+let lightSwitch = document.getElementById("js--light-switch");
 
 window.onload = () => {
   var sceneEl = document.getElementById("js--scene");
@@ -56,8 +57,8 @@ setPosition = (entity) => {
 };
 
 leaveChallenge = function() {
-  // fadeoutPlane.setAttribute("animation", "property: opacity; to: 1; dur: 2000;");
-  // setTimeout(function(){
+  lightSwitch.components.sound.playSound();
+  setTimeout(function(){
     location.replace("index.html");
-  // }, 2000);
+  }, 2000);
 }
