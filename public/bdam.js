@@ -5,6 +5,7 @@ const fadeoutPlane = document.getElementById("js--fadeout");
 const snippet1 = document.getElementById("js--snippet1");
 const snippet2 = document.getElementById("js--snippet2");
 const snippet3 = document.getElementById("js--snippet3");
+let goodSound = document.getElementById("js--good-sound");
 
 const box1 = document.getElementById("js--box1");
 const box2 = document.getElementById("js--box2");
@@ -114,6 +115,7 @@ makeBox = function(id, color, position, space) {
 
 leaveChallenge = function() {
   fadeoutPlane.setAttribute("animation", "property: opacity; to: 1; dur: 3000; easing: easeInElastic");
+  goodSound.components.sound.playSound();
   setTimeout(function(){
     location.replace("index.html");
   }, 3000);
