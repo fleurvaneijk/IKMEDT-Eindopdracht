@@ -27,7 +27,7 @@ var counter3 = 0;
 window.onload = function() {
   setTimeout(function(){
     snippet1.components.sound.playSound();
-  }, 400);
+  }, 7000);
 };
 
 pickUp = function(event) {
