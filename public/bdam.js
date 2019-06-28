@@ -2,6 +2,10 @@ const camera = document.getElementById("js--camera");
 const scene = document.getElementById("js--scene");
 const fadeoutPlane = document.getElementById("js--fadeout");
 
+const snippet1 = document.getElementById("js--snippet1");
+const snippet2 = document.getElementById("js--snippet2");
+const snippet3 = document.getElementById("js--snippet3");
+
 const box1 = document.getElementById("js--box1");
 const box2 = document.getElementById("js--box2");
 const box3 = document.getElementById("js--box3");
@@ -13,9 +17,17 @@ const boxes = [box1, box2, box3, box4, box5, box6];
 
 const colors = ["#e91e63", "#2196f3", "#4caf50"];
 
+var totalCounter = 0;
+
 var counter1 = 0;
 var counter2 = 0;
 var counter3 = 0;
+
+window.onload = function() {
+  setTimeout(function(){
+    snippet1.components.sound.playSound();
+  }, 400);
+};
 
 pickUp = function(event) {
   if (document.getElementById("js--camera-box") != undefined) {
@@ -41,11 +53,22 @@ placeObject = function(event) {
     return;
   }
 
+  if (totalCounter == 3) {
+    setTimeout(function(){
+      snippet2.components.sound.playSound();
+    }, 400);
+  } else if (totalCounter == 4) {
+    setTimeout(function(){
+      snippet3.components.sound.playSound();
+    }, 400);
+  };
+
   if(event.target.getAttribute("color") == colors[0]){
     if(counter1 == 0) {
       scene.appendChild(makeBox("1box1", document.getElementById("js--camera-box").getAttribute("color"),"-2 0.626 -6", "1"));
     }
     counter1++;
+    totalCounter++;
   }
   else if(event.target.getAttribute("color") == colors[1]){
     if(counter2 == 0) {
@@ -54,6 +77,7 @@ placeObject = function(event) {
       scene.appendChild(makeBox("2box2", document.getElementById("js--camera-box").getAttribute("color"),"0 1.626 -6", "1"));
     }
     counter2++;
+    totalCounter++;
   }
   else if(event.target.getAttribute("color") == colors[2]){
     if(counter3 == 0) {
@@ -64,6 +88,7 @@ placeObject = function(event) {
       scene.appendChild(makeBox("3box3", document.getElementById("js--camera-box").getAttribute("color"),"2 2.626 -6", "1"));
     }
     counter3++;
+    totalCounter++;
   }
   document.getElementById("js--camera-box").remove();
 
