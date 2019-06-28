@@ -1,5 +1,10 @@
 const fadeoutPlane = document.getElementById("js--fadeout");
 let lightSwitch = document.getElementById("js--light-switch");
+let goodSound = document.getElementById("js--good-sound");
+const flashlight = document.getElementById("js--flashlight");
+const flashcursor = document.getElementById("js--flashcursor");
+
+
 
 window.onload = () => {
   var sceneEl = document.getElementById("js--scene");
@@ -49,16 +54,19 @@ setPosition = (entity) => {
 
   if (myZ <= 3 && myZ >= -3) {
     entity.setAttribute("scale", "0.6 0.6 0.6");
-    // entity.setAttribute("look-at", "[camera]");
-    console.log("werkt dit?");
   }
 
   entity.setAttribute("position", {x: myX, y: myY, z: myZ});
 };
 
 leaveChallenge = function() {
-  lightSwitch.components.sound.playSound();
+  goodSound.components.sound.playSound();
+  setTimeout(function(){
+    lightSwitch.components.sound.playSound();
+    flashcursor.setAttribute("geometry", "primitive: ring; radiusInner: 0.001; radiusOuter: 2;");
+    flashlight.setAttribute("light", "type: spot; angle: 0; distance: 100; decay: 1; penumbra: 0.5;");
+  }, 2000);
   setTimeout(function(){
     location.replace("index.html");
-  }, 2000);
+  }, 3000);
 }
