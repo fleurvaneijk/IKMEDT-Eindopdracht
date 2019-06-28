@@ -4,9 +4,18 @@ let goodSound = document.getElementById("js--good-sound");
 const flashlight = document.getElementById("js--flashlight");
 const flashcursor = document.getElementById("js--flashcursor");
 
-
+const snippet1 = document.getElementById("js--snippet1");
+const snippet2 = document.getElementById("js--snippet2");
 
 window.onload = () => {
+  setTimeout(function(){
+    snippet1.components.sound.playSound();
+  }, 7000);
+
+  setTimeout(function(){
+    snippet2.components.sound.playSound();
+  }, 15000);
+
   var sceneEl = document.getElementById("js--scene");
 
   var hacker = document.createElement("a-image");
